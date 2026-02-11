@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## For All Code Changes
+
+1. Create feature branch
+2. Make changes and commit (Don't add co-author)
+3. Push branch and open a pull request (Don't add co-author)
+4. Manual review before merging
+
 ## Commands
 
 ```bash
