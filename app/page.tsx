@@ -3,7 +3,7 @@ import { ContactForm } from "./components/ContactForm";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6 relative">
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6 py-12">
       {/* Logo */}
       <div className="mb-8">
         <Image
@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="absolute bottom-6 text-gray-600 text-sm">
+      <footer className="mt-16 text-gray-600 text-sm">
         &copy; {new Date().getFullYear()} Diamond IQ Baseball
       </footer>
     </main>
