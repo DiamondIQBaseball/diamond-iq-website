@@ -34,12 +34,35 @@ Marketing landing page for Diamond IQ baseball training app. Simple static site 
 ```
 diamond-iq-website/
 ├── app/
-│   ├── layout.tsx    # Root layout with metadata
-│   ├── page.tsx      # Hero landing page
-│   └── globals.css   # Tailwind styles
+│   ├── layout.tsx              # Root layout with metadata
+│   ├── page.tsx                # Hero landing page
+│   ├── globals.css             # Tailwind styles
+│   ├── actions/
+│   │   └── contact.ts          # Contact form server action
+│   ├── components/
+│   │   └── ContactForm.tsx     # Contact form component
+│   └── lib/
+│       └── supabase.ts         # Supabase client (server-only)
 └── public/
-    └── logo.png      # Diamond IQ logo
+    └── logo.png                # Diamond IQ logo
 ```
+
+## Environment Variables
+
+Required in Vercel (project-level settings):
+
+| Variable | Description |
+|----------|-------------|
+| `SUPABASE_URL` | Supabase project URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role key for server-side DB access |
+
+## Contact Form
+
+The landing page includes a contact form that stores submissions in Supabase:
+- Server action handles validation and insert
+- Uses `server-only` import to prevent key leakage
+- Honeypot field for basic spam protection
+- Data stored in `contact_submissions` table (see diamond-iq-supabase)
 
 ## Brand Colors
 
