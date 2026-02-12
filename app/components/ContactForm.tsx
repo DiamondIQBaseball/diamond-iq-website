@@ -1,14 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { submitContact } from '../actions/contact';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  async function handleSubmit(formData: FormData) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setStatus('loading');
+
+    const formData = new FormData(e.currentTarget);
     const result = await submitContact(formData);
 
     if (result.error) {
@@ -29,7 +32,7 @@ export function ContactForm() {
   }
 
   return (
-    <form action={handleSubmit} className="w-full max-w-md space-y-4">
+    <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
       <input
         type="text"
         name="name"
