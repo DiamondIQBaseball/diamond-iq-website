@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContactForm } from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -24,6 +25,14 @@ export default function Home() {
       <span className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium">
         Coming Soon
       </span>
+
+      {/* Contact Section */}
+      <div className="mt-12 w-full max-w-md text-center">
+        <h2 className="text-lg font-medium text-gray-300 mb-6">
+          Interested? Let us know!
+        </h2>
+        <ContactForm />
+      </div>
 
       {/* Footer */}
       <footer className="absolute bottom-6 text-gray-600 text-sm">
