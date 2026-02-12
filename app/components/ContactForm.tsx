@@ -53,6 +53,15 @@ export function ContactForm() {
         className="w-full bg-gray-900 border border-gray-700 text-white rounded-lg px-4 py-3
           placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition"
       />
+      {/* Honeypot field - hidden from users, bots will fill it */}
+      <input
+        type="text"
+        name="website"
+        autoComplete="off"
+        tabIndex={-1}
+        className="absolute -left-[9999px]"
+        aria-hidden="true"
+      />
       <button
         type="submit"
         disabled={status === 'loading'}
